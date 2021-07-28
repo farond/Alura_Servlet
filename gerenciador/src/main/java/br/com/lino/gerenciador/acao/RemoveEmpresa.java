@@ -10,7 +10,7 @@ import br.com.lino.gerenciador.model.Banco;
 
 public class RemoveEmpresa {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) 
+	public String executa(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
 		System.out.println("removendo empresas");
@@ -22,7 +22,9 @@ public class RemoveEmpresa {
 		Banco banco = new Banco();
 		banco.removeEmpresa(id);
 		
-		response.sendRedirect("principal?acao=ListaEmpresas");
+		
+		return "redirect:principal?acao=ListaEmpresas";
+		//response.sendRedirect("principal?acao=ListaEmpresas");
 		
 	}
 

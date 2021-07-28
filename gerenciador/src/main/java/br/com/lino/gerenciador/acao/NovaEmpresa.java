@@ -16,7 +16,7 @@ import br.com.lino.gerenciador.model.Empresa;
 
 public class NovaEmpresa {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) 
+	public String executa(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
 		System.out.println("Cadastrando nova empresa");
@@ -41,7 +41,9 @@ public class NovaEmpresa {
 		
 		request.setAttribute("empresa", empresa.getNome());
 		
-		response.sendRedirect("principal?acao=ListaEmpresas");
+		return "redirect:principal?acao=ListaEmpresas";
+		
+		
 		
 	}
 	

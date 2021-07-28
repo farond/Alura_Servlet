@@ -12,7 +12,7 @@ import br.com.lino.gerenciador.model.Empresa;
 
 public class MostraEmpresa {
 	
-	public void executa(HttpServletRequest request, HttpServletResponse response) 
+	public String executa(HttpServletRequest request, HttpServletResponse response) 
 			throws ServletException, IOException {
 		
 		System.out.println("mostra empresas");
@@ -27,8 +27,8 @@ public class MostraEmpresa {
 		
 		request.setAttribute("empresa", empresa);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/formAlteraEmpresa.jsp");		
-		rd.forward(request, response);
+		return "forward:/formAlteraEmpresa.jsp";		
+		
 	}
 
 }
